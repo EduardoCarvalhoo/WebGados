@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WebGados</string>
+
+    <string name="announcement_age_text">Idade</string>
+    <string name="announcement_Weight_text">Peso</string>
+    <string name="announcement_per_head_text">por cabeça</string>
+    <string name="announcement_image_description">Gados pretos exibidos na tela</string>
+
+</resources>
