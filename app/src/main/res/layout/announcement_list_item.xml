@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
         android:id="@+id/announcement_ad_photo_image_view"
         android:layout_width="0dp"
@@ -207,5 +206,6 @@
         app:layout_constraintTop_toBottomOf="@+id/announcement_age_text_view"
         app:srcCompat="@drawable/tiringa"
         android:contentDescription="@string/announcement_tiringa_text"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
