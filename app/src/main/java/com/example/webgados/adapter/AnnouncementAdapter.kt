@@ -3,12 +3,10 @@ package com.example.webgados.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.MainThread
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.webgados.R
 import com.example.webgados.response.AdListItemResponse
-import com.example.webgados.ui.MainActivity
 import kotlinx.android.synthetic.main.announcement_list_item.view.*
 
 class AnnouncementAdapter(
@@ -17,7 +15,8 @@ class AnnouncementAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CattleAdsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.announcement_list_item, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.announcement_list_item, parent, false)
         return CattleAdsViewHolder(view)
     }
 
@@ -43,7 +42,6 @@ class AnnouncementAdapter(
         private val state = itemView.announcement_state_text_view
 
 
-
         fun bindView(dice: AdListItemResponse) {
             quantity.text = dice.quantity
             title.text = dice.title
@@ -58,7 +56,7 @@ class AnnouncementAdapter(
             getUrl(imageUrl.toString())
         }
 
-        fun getUrl(imageUrl:String){
+        fun getUrl(imageUrl: String) {
             val url = imageUrl
 
             Glide.with(this@CattleAdsViewHolder.itemView).load(url).into(ad_photo)
