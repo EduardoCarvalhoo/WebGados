@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun setupRecyclerView(result: List<AdListItemResponse>) {
         main_recycler_view.layoutManager = LinearLayoutManager(
             this@MainActivity, RecyclerView.VERTICAL, false
