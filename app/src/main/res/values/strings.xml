@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">WebGados</string>
-
     <string name="announcement_months_text">meses</string>
     <string name="announcement_arrobas_text">arrobas</string>
     <string name="announcement_coin_text">R$</string>
