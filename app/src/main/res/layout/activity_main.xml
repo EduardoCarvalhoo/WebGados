@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_recycler_view"
         android:layout_width="0dp"
@@ -14,5 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/announcement_list_item"/>
+        tools:listitem="@layout/announcement_list_item" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
