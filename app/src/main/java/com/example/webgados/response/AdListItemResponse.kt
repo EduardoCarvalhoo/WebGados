@@ -11,5 +11,4 @@ data class AdListItemResponse(
     val broker_evaluation: String?,
     val city: String?,
     val state: String?,
-
 )
