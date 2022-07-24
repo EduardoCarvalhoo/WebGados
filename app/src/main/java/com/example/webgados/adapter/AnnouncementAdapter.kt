@@ -1,22 +1,21 @@
 package com.example.webgados.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.webgados.R
+import com.example.webgados.databinding.AnnouncementListItemBinding
 import com.example.webgados.response.AdListItemResponse
-import kotlinx.android.synthetic.main.announcement_list_item.view.*
 
 class AnnouncementAdapter(
     private var cattle: List<AdListItemResponse>,
 ) : RecyclerView.Adapter<AnnouncementAdapter.CattleAdsViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CattleAdsViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.announcement_list_item, parent, false)
+        val view = AnnouncementListItemBinding.inflate(
+            LayoutInflater.from(parent.context), parent,
+            false
+        )
         return CattleAdsViewHolder(view)
     }
 
@@ -28,39 +27,34 @@ class AnnouncementAdapter(
         return cattle.size
     }
 
-    class CattleAdsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class CattleAdsViewHolder(binding: AnnouncementListItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        private val adphoto = binding.announcementAdPhotoImageView
+        private val quantity = binding.announcementQuantityTextView
+        private val title = binding.announcementTitleDescriptionTextView
+        private val months = binding.announcementNumberOfMonthsTextView
+        private val atsign = binding.announcementNumberOfArrobasTextView
+        private val price = binding.announcementPriceTextView
+        private val evaluation = binding.announcementEvaluationTextView
+        private val broker = binding.announcementBrokerNameTextView
+        private val localization = binding.announcementCityTextView
+        private val state = binding.announcementStateTextView
 
-        private val ad_photo = itemView.announcement_ad_photo_image_view
-        private val quantity = itemView.announcement_quantity_text_view
-        private val title = itemView.announcement_title_description_text_view
-        private val months = itemView.announcement_number_of_months_text_view
-        private val at_sign = itemView.announcement_number_of_arrobas_text_view
-        private val price = itemView.announcement_price_text_view
-        private val evaluation = itemView.announcement_evaluation_text_view
-        private val broker = itemView.announcement_broker_name_text_view
-        private val localization = itemView.announcement_City_text_view
-        private val state = itemView.announcement_state_text_view
-
-
-        fun bindView(dice: AdListItemResponse) {
-            quantity.text = dice.quantity
-            title.text = dice.title
-            months.text = dice.age
-            at_sign.text = dice.weight
-            price.text = dice.price
-            broker.text = dice.broker
-            localization.text = dice.city
-            state.text = dice.state
-            evaluation.text = dice.broker_evaluation
-            val imageUrl = dice.image_url
-            getUrl(imageUrl.toString())
+        fun bindView(item: AdListItemResponse) {
+            getUrl(item.image_url.toString())
+            quantity.text = item.quantity
+            title.text = item.title
+            months.text = item.age
+            atsign.text = item.weight
+            price.text = item.price
+            broker.text = item.broker
+            localization.text = item.city
+            state.text = item.state
+            evaluation.text = item.broker_evaluation
         }
 
-        fun getUrl(imageUrl: String) {
-            val url = imageUrl
-
-            Glide.with(this@CattleAdsViewHolder.itemView).load(url).into(ad_photo)
-
+        private fun getUrl(imageUrl: String) {
+            Glide.with(this@CattleAdsViewHolder.itemView).load(imageUrl).into(adphoto)
         }
     }
 }
