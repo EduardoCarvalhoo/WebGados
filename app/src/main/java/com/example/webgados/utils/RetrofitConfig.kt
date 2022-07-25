@@ -18,7 +18,7 @@ class RetrofitConfig {
 
             return Retrofit.Builder()
                 .client(client)
-                .baseUrl(AnnouncementConfig.URL_BASE)
+                .baseUrl(AnnouncementConfig.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(AnnouncementService::class.java)
         }
