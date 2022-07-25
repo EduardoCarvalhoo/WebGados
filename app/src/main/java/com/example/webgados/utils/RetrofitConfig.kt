@@ -16,12 +16,11 @@ class RetrofitConfig {
                 .addInterceptor(logging)
                 .build()
 
-            val retrofit = Retrofit.Builder()
+            return Retrofit.Builder()
                 .client(client)
                 .baseUrl(AnnouncementConfig.URL_BASE)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(AnnouncementService::class.java)
-            return retrofit
         }
     }
 }
