@@ -2,8 +2,7 @@ package com.example.webgados.utils
 
 class AnnouncementConfig {
 
-    companion object{
-        val URL_BASE = "https://mocki.io/"
+    companion object {
+        const val BASE_URL = "https://mocki.io/"
     }
-
 }
