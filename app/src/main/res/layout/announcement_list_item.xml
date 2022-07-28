@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingVertical="24dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/announcement_ad_photo_image_view"
@@ -21,11 +20,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/announcement_quantity_text_view"
         app:layout_constraintTop_toBottomOf="@+id/announcement_ad_photo_image_view"
         tools:text="Bezerros Nelores" />
@@ -49,49 +51,43 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_left_layout_divider_view"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view"
-        tools:text="10" />
+        tools:text="10 meses" />
 
     <TextView
         android:id="@+id/announcement_number_of_arrobas_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/announcement_months_text_view"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_layout_divider_right_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/announcement_left_layout_divider_view"
         app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view"
-        tools:text="9" />
+        tools:text="9 arrobas" />
 
     <TextView
-        android:id="@+id/announcement_price_text_view"
+        android:id="@+id/announcement_value_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:textColor="@color/lightgreen"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/announcement_coin_text"
+        android:textAlignment="center"
+        android:textColor="@color/light_green"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/announcement_coin_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view"
-        tools:text="1.200" />
-
-    <TextView
-        android:id="@+id/announcement_coin_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/announcement_coin_text"
-        android:textColor="@color/lightgreen"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/announcement_arrobas_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/announcement_layout_divider_right_view"
         app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view" />
 
     <TextView
@@ -100,78 +96,58 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/announcement_age_text"
+        android:textAlignment="center"
+        android:textColor="@android:color/secondary_text_light"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_left_layout_divider_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_months_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/announcement_number_of_months_text_view" />
 
     <TextView
         android:id="@+id/announcement_Weight_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
         android:text="@string/announcement_Weight_text"
-        app:layout_constraintStart_toEndOf="@+id/announcement_age_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_arrobas_text_view" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_layout_divider_right_view"
+        app:layout_constraintStart_toEndOf="@+id/announcement_left_layout_divider_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_number_of_arrobas_text_view" />
 
     <TextView
         android:id="@+id/announcement_per_head_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/announcement_per_head_text"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/announcement_Weight_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_price_text_view"
+        app:layout_constraintStart_toEndOf="@+id/announcement_layout_divider_right_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_value_text_view"
         tools:text="por cabeça" />
 
     <TextView
         android:id="@+id/announcement_broker_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_City_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/announcement_tiringa_image_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_age_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_center_layout_divider_view"
         tools:text="José Renato Andrade" />
 
     <TextView
         android:id="@+id/announcement_City_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:gravity="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/announcement_state_text_view"
-        app:layout_constraintStart_toEndOf="@+id/announcement_broker_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_per_head_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_center_layout_divider_view"
         app:layout_constraintVertical_bias="0.0"
         tools:text="Promissão" />
-
-    <TextView
-        android:id="@+id/announcement_months_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/announcement_months_text"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/announcement_number_of_months_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view" />
-
-    <TextView
-        android:id="@+id/announcement_arrobas_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/announcement_arrobas_text"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/announcement_number_of_arrobas_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view" />
 
     <TextView
         android:id="@+id/announcement_broker_text_view"
@@ -184,26 +160,15 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/announcement_evaluation_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/announcement_broker_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_broker_name_text_view"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="5.0" />
-
-    <TextView
         android:id="@+id/announcement_state_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:gravity="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_per_head_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_center_layout_divider_view"
         app:layout_constraintVertical_bias="0.0"
         tools:text="SP" />
 
@@ -212,13 +177,64 @@
         android:layout_width="54dp"
         android:layout_height="56dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/announcement_tiringa_text"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_broker_name_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/announcement_age_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_center_layout_divider_view"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/tiringa" />
+
+    <View
+        android:id="@+id/announcement_left_layout_divider_view"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/light_gray"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_number_of_arrobas_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/announcement_number_of_months_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view" />
+
+    <View
+        android:id="@+id/announcement_layout_divider_right_view"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/light_gray"
+        app:layout_constraintEnd_toStartOf="@+id/announcement_value_text_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/announcement_number_of_arrobas_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_title_description_text_view" />
+
+    <View
+        android:id="@+id/announcement_center_layout_divider_view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_Weight_text_view" />
+
+    <View
+        android:id="@+id/announcement_final_layout_divider_view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/light_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_tiringa_image_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
