@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.webgados.R
 import com.example.webgados.databinding.AnnouncementListItemBinding
 import com.example.webgados.response.AdListItemResponse
 
@@ -34,27 +35,23 @@ class AnnouncementAdapter(
         private val title = binding.announcementTitleDescriptionTextView
         private val months = binding.announcementNumberOfMonthsTextView
         private val atsign = binding.announcementNumberOfArrobasTextView
-        private val price = binding.announcementPriceTextView
-        private val evaluation = binding.announcementEvaluationTextView
+        private val price = binding.announcementValueTextView
+        private val evaluation = binding.announcementBrokerTextView
         private val broker = binding.announcementBrokerNameTextView
         private val localization = binding.announcementCityTextView
         private val state = binding.announcementStateTextView
 
         fun bindView(item: AdListItemResponse) {
-            getUrl(item.image_url.toString())
+            Glide.with(this@CattleAdsViewHolder.itemView).load(item.image_url).into(adphoto)
             quantity.text = item.quantity
             title.text = item.title
-            months.text = item.age
-            atsign.text = item.weight
-            price.text = item.price
+            months.text =  item.age + itemView.context.getString(R.string.announcement_months_text)
+            atsign.text = item.weight + itemView.context.getString(R.string.announcement_arrobas_text)
+            price.text = itemView.context.getString(R.string.announcement_coin_text) + item.price
             broker.text = item.broker
             localization.text = item.city
             state.text = item.state
-            evaluation.text = item.broker_evaluation
-        }
-
-        private fun getUrl(imageUrl: String) {
-            Glide.with(this@CattleAdsViewHolder.itemView).load(imageUrl).into(adphoto)
+            evaluation.text = itemView.context.getString(R.string.announcement_broker_text) + item.broker_evaluation
         }
     }
 }
