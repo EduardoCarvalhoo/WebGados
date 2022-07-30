@@ -45,13 +45,17 @@ class AnnouncementAdapter(
             Glide.with(this@CattleAdsViewHolder.itemView).load(item.image_url).into(adphoto)
             quantity.text = item.quantity
             title.text = item.title
-            months.text =  item.age + itemView.context.getString(R.string.announcement_months_text)
-            atsign.text = item.weight + itemView.context.getString(R.string.announcement_arrobas_text)
-            price.text = itemView.context.getString(R.string.announcement_coin_text) + item.price
             broker.text = item.broker
             localization.text = item.city
             state.text = item.state
-            evaluation.text = itemView.context.getString(R.string.announcement_broker_text) + item.broker_evaluation
+            months.text = itemView.context.getString(R.string.announcement_months_text, item.age)
+            atsign.text =
+                itemView.context.getString(R.string.announcement_arrobas_text, item.weight)
+            price.text = itemView.context.getString(R.string.announcement_coin_text, item.price)
+            evaluation.text = itemView.context.getString(
+                R.string.announcement_broker_text,
+                item.broker_evaluation
+            )
         }
     }
 }
