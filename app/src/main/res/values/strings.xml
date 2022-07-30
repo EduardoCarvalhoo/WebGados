@@ -2,13 +2,13 @@
     <string name="app_name">WebGados</string>
 
     <!-- Announcement List Item -->
-    <string name="announcement_months_text">meses</string>
-    <string name="announcement_arrobas_text">arrobas</string>
-    <string name="announcement_coin_text">R$</string>
+    <string name="announcement_months_text">%1$s meses</string>
+    <string name="announcement_arrobas_text">%1$s arrobas</string>
+    <string name="announcement_coin_text">R$ %1$s</string>
     <string name="announcement_age_text">Idade</string>
     <string name="announcement_Weight_text">Peso</string>
     <string name="announcement_per_head_text">por cabeça</string>
-    <string name="announcement_broker_text">Corretor</string>
+    <string name="announcement_broker_text">Corretor %1$s</string>
     <string name="announcement_oxen_text">Você clicou em uma imagem de boi a venda</string>
     <string name="announcement_tiringa_text">Corretor Tiringa</string>
 
